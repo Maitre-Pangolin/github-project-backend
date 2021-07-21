@@ -9,6 +9,10 @@ const app = express();
 
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("Wow!");
+});
+
 app.get("/rate", (req, res) => {
   const headers = { Authorization: `Bearer ${API_TOKEN}` };
   fetch("https://api.github.com/rate_limit?", {
